@@ -1,0 +1,4 @@
+assets/img/posters/*.jpg
+assets/img/posters/*.jpeg
+inc/connectBDD.php
+netfix.sql

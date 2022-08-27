@@ -1,0 +1,54 @@
+/* généralité */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: rgb(6, 22, 248);
+}
+
+/***** navigation *****/
+
+.navHead{
+    height: 10vh;
+    background-color: rgb(97, 107, 248);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button{
+    width: 8em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(154, 160, 247);
+    border-radius: 0.5em;
+}
+.button:hover{
+    background-color: rgb(97, 150, 248);
+}
+.logo{
+    font-size: 3em;
+    padding-left: 1em;
+    color: white;
+}
+.list{
+    font-size: 1.5em;
+    color: white;
+}
+.user{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.info{
+    font-size: 1.5em;
+}
