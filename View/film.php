@@ -46,7 +46,9 @@ $filmController =new FilmController();
                         <h3>Titre : '.$film["title"].'</h3>
                         <p>Description : '.$film["plot"].'</p>
                         <p>Réalisateur : '.$film["directors"].'</p>
+                        <p>Avec : '.$film["cast"].'</p>
                         <p>Genre : '.$film["genres"].'</p>
+                        <p>Année : '.$film["year"].'</p>
                     </div>
                 </div>
                 '); 
