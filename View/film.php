@@ -3,6 +3,8 @@ session_start();
 // var_dump($_SERVER);
 require_once("../Controller/RouteController.php");
 $routeController = new RouteController($_SERVER);
+require_once("../Controller/FilmController.php");
+$filmController =new FilmController();
 // $routeController->getRoute("index");
 
 
@@ -29,7 +31,28 @@ $routeController = new RouteController($_SERVER);
         <?php /* include($routeController->getRoute("menu")); */ include('./menu.php'); ?>
     </header>
     <main>
-        <ul id="list"></ul>
+        <?php $result = $filmController->showFilm(); ?>
+        <section class="listFilm">
+            <?php
+            foreach($result as $film){
+                $images = "../assets/img/posters/".$film['id_movie'];
+                // var_dump($images);
+                echo (' 
+                <div class="card">
+                    <div class="imgCard">
+                        <img src="'.$images.'"alt="">
+                    </div>
+                    <div class="infos">
+                        <h3>Titre : '.$film["title"].'</h3>
+                        <p>Description : '.$film["plot"].'</p>
+                        <p>Réalisateur : '.$film["directors"].'</p>
+                        <p>Genre : '.$film["genres"].'</p>
+                    </div>
+                </div>
+                '); 
+            }
+            ?>
+        </section>
     </main>
     <footer></footer>
 </body>

@@ -7,7 +7,7 @@ class FilmRepository {
         $query = $instance->connect()->prepare($sql);
         $query->execute(); 
         $result = $query->fetchAll();
-        echo json_encode($result);
+        // echo json_encode($result);
         return $result;           
     }
 }

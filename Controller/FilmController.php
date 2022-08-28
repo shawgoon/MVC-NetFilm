@@ -26,6 +26,7 @@ class FilmController extends FilmRepository{
         return $film;
     }
     public function showMovies(){
-
+        $showMovies = new FilmRepository;
+        return $showMovies->showFilm();
     }
 }
