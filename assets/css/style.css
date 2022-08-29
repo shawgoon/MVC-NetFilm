@@ -39,7 +39,7 @@ a{
     padding-left: 1em;
     color: white;
 }
-.list{
+.listFilm{
     font-size: 1.5em;
     color: white;
 }
@@ -51,4 +51,31 @@ a{
 }
 .info{
     font-size: 1.5em;
+}
+
+/****** cards ******/
+
+.cardsFrame{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.title{
+    font-size: 2em;
+    color: rgb(6, 22, 248);
+    margin-bottom: 0.5em;
+}
+.cardImg img{
+    width: 100%;
+}
+.cardImg{
+    margin: 0 auto;
+}
+.card{
+    width: 32%;
+    border: solid 2px fuchsia;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

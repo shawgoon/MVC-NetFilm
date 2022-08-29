@@ -2,7 +2,7 @@ let limit = 0;
 $.post("./admin/select.php", (data, status)=>{
     console.dir(status);
     console.dir(typeof(data));
-    let json = $.parseJSON( data);
+    let json = $.parseJSON(data);
     console.dir(json);
     cardGenerator(json);
 });
@@ -31,5 +31,5 @@ function cardGenerator(json){
             </ul>
         </div>`
     });
-    $("#container").append(cards);
+    $("#cardsFrame").append(cards);
 }

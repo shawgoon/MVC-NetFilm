@@ -13,7 +13,8 @@ $activSession = SessionController::activSession();
 
             </div>
         <?php } else { ?>
-            <div class="list"><li><a href="<?= $routeController->getRoute("film"); ?>">Films</a></li></div>
+            <div class="listFilm"><li><a href="<?= $routeController->getRoute("film"); ?>">Films</a></li></div>
+            <div class="listCat"><li><a href="<?= $routeController->getRoute("categorie"); ?>">Catégories</a></li></div>
             <div class="user">
                 <li class="info">Bonjour, <?= $_SESSION["user"]["pseudo"] ?></li>
                 <li class="button"><a href="<?= $routeController->getRoute("logout"); ?>">Déconnexion</a></li>
