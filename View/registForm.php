@@ -1,9 +1,15 @@
 <?php 
 session_start();
-require_once("../Controller/UserController.php");
-$userController = new UserController();
-require_once("../Controller/RouteController.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
 $routeController = new RouteController($_SERVER);
+
+require_once($routeController->getController("UserController"));
+$userController = new UserController();
 $register = $userController->register($_POST);
 // var_dump($userController->errors);
 // var_dump($userController->post);

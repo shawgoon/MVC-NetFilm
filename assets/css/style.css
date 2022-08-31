@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 ul{
     list-style: none;
@@ -43,6 +44,12 @@ a{
     font-size: 1.5em;
     color: white;
 }
+.listCat{
+    font-size: 1.5em;
+    border: none;
+    background-color: rgb(97, 107, 248);
+    color: rgb(6, 22, 248);
+}
 .user{
     width: 30%;
     display: flex;
@@ -52,6 +59,7 @@ a{
 .info{
     font-size: 1.5em;
 }
+
 
 /****** cards ******/
 
@@ -74,8 +82,35 @@ a{
 }
 .card{
     width: 32%;
-    border: solid 2px fuchsia;
+    border: solid 5px rgb(97, 107, 248);
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+/****** page category ******/
+
+.titleCat{
+    font-size: 2em;
+    color: rgb(97, 107, 248);
+    text-align: center;
+}
+/* pagination */
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.page-item{
+    width: 2em;height: 2em;
+    border: solid 1px rgb(97, 107, 248);
+    border-radius: 0.2em;
+    margin: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.page-link a:disabled{
+    background-color: rgb(154, 160, 247);
 }

@@ -1,10 +1,15 @@
 <?php
 session_start();
 // var_dump($_SERVER);
-require_once("../Controller/RouteController.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
 $routeController = new RouteController($_SERVER);
-require_once("../Controller/FilmController.php");
-// $filmController = new FilmController();
+
+require_once ($routeController->getController("FilmController"));
 $films = FilmController::showMovies(10);
 // var_dump($films);
 $films = json_encode($films);
@@ -30,14 +35,14 @@ $films = json_encode($films);
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script>const films = <?= $films ?>; /* console.dir(films); */</script>
-    <script src="../assets/js/master.js" defer></script>
-    <script src="../assets/js/card.js" type="text/babel" defer></script>
+    <script src="<?= $routeController->getAssets(); ?>js/master.js" defer></script>
+    <script src="<?= $routeController->getAssets(); ?>js/card.js" type="text/babel" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="<?= $routeController->getAssets(); ?>css/style.css">
 </head>
 <body>
     <header>
-        <?php /* include($routeController->getRoute("menu")); */ include('./menu.php'); ?>
+        <?php include($routeController->getInc("menu")); ?>
     </header>
     <main>
         <?php /* $result = $films->showMovies(10); */ ?>

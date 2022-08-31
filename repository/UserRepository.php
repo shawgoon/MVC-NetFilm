@@ -1,5 +1,13 @@
 <?php
-require_once("../inc/connectBDD.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
+$routeController = new RouteController($_SERVER);
+
+require_once($pref."inc/connectBDD.php");
 class UserRepository {
     public function insertUser($data){
         $instance = new ConnectBDD();

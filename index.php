@@ -1,7 +1,14 @@
 <?php
 session_start();
-require_once("./Controller/RouteController.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
 $routeController = new RouteController($_SERVER);
+
+require_once ($routeController->getController("FilmController"));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +24,7 @@ $routeController = new RouteController($_SERVER);
 </head>
 <body>
     <header>
-        <?php /* include($routeController->getRoute("menu")); */ include_once("./View/menu.php"); ?>
+        <?php include($routeController->getInc("menu")); ?>
     </header>
 </body>
 </html>

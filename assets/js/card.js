@@ -2,7 +2,7 @@ class CardsFrame extends React.Component {
     constructor(props){
         super(props);
         this.state = {films:props.filmsProps}
-        console.dir(props.filmsProps);
+        // console.dir(props.filmsProps);
     }
     render(){
         return(

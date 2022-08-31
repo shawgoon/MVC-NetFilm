@@ -1,5 +1,14 @@
 <?php
-class Film {
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
+$routeController = new RouteController($_SERVER);
+
+require_once($routeController->getRepository("FilmRepository"));
+class Film extends FilmRepository{
     public function __construct(
         $id_movie,
         $title,

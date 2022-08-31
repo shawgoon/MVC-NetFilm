@@ -1,5 +1,14 @@
 <?php
-require_once("../repository/UserRepository.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
+$routeController = new RouteController($_SERVER);
+
+require_once($routeController->getRepository("UserRepository"));
+
 class User extends UserRepository {
     public function __construct(
         $email,

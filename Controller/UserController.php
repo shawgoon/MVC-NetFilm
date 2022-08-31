@@ -1,9 +1,16 @@
 <?php
-require_once("../Model/User.php");
-require_once("../Controller/FormVerif.php");
-require_once("../repository/UserRepository.php");
-require_once("../Controller/SessionController.php");
-require_once("../Controller/RouteController.php");
+if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
+    $pref = './';
+} else {
+    $pref = '../';
+}
+require_once($pref."Controller/RouteController.php");
+$routeController = new RouteController($_SERVER);
+
+require_once($routeController->getModel("User"));
+require_once($routeController->getController("FormVerif"));
+require_once($routeController->getRepository("UserRepository"));
+require_once($routeController->getController("SessionController"));
 class UserController extends FormVerif {
     
     public $errors = [];
