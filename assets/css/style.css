@@ -72,18 +72,6 @@ button:hover{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.title{
-    font-size: 2em;
-    color: rgb(6, 22, 248);
-    margin-top: 0.5em;
-}
-.cardImg img{
-    width: 100%;
-}
-.cardImg{
-    width: 15em;
-    margin: 0.5em auto;
-}
 .card{
     width: 32%;
     padding: 1em;
@@ -93,6 +81,28 @@ button:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.title{
+    font-size: 2em;
+    color: rgb(6, 22, 248);
+    text-align: center;
+    margin-top: 0.5em;
+}
+.cardImg img{
+    width: 100%;
+}
+.cardImg{
+    width: 15em;
+    margin: 0.5em auto;
+}
+.card p{
+    color: rgb(6, 22, 248);
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+.card li{
+    text-align: center;
 }
 .addList,
 .infoFilm{
@@ -107,21 +117,13 @@ button:hover{
 .infoFilm{
     background-color: rgb(97, 107, 248);
 }
-.card p{
-    color: rgb(6, 22, 248);
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: 0.5em;
-}
-.card li{
-    text-align: center;
-}
 
 
 /****** page category ******/
 
 .titleCat{
-    font-size: 2em;
+    font-size: 3em;
+    margin: 0.5em;
     color: rgb(97, 107, 248);
     text-align: center;
 }

@@ -17,6 +17,8 @@ class CardsFrame extends React.Component {
                     key={index} 
                     dCard={this.state.dCard}
                     url={this.props.url}
+                    xhrUrl={this.props.xhrUrl}
+                    session_id={this.props.session_id}
                     />
                 })}
                 
@@ -27,6 +29,13 @@ class CardsFrame extends React.Component {
 function Card(props){
     function goToSingle(id_movie){
         location.href = props.url+"?id_movie="+id_movie;
+    }
+    function addToPref(id_movie){
+        fetch(props.xhrUrl+"?id_movie="+id_movie+"&id_user=".props.session_id).then(
+            (response)=>response.text()
+        ).then((result)=>{
+            console.log(result);
+        })
     }
     return(
         <div className="card">
@@ -48,8 +57,15 @@ function Card(props){
                 <p>Plot</p>
                 <li className="plot">{props.info.plot}</li>
             </ul>
-            {props.dCard ? <button type="button" onClick={()=>{goToSingle(props.info.id_movie)}} className="infoFilm">Fiche du film</button> : ""}
-            <button type="button" className="addList">Ajouter à ma liste</button>
+
+            {props.dCard ? 
+            <button type="button" 
+            onClick={()=>{goToSingle(props.info.id_movie)}} 
+            className="infoFilm">Fiche du film</button> : ""}
+            
+            <button type="button" 
+            onClick={()=>{addToPref(props.info.id_movie,props.session_id)}}
+            className="addList">Ajouter à ma liste</button>
         </div>
     )
 }
@@ -57,6 +73,8 @@ function Card(props){
 ReactDOM.render(<CardsFrame 
 filmsProps={films} 
 displayCard={dCard}
-url={url}>
+url={url}
+xhrUrl={xhrUrl}
+session_id={session_id}>
 
 </CardsFrame>,document.getElementById("cardsFrame"));

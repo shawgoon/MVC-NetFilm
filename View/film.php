@@ -14,14 +14,12 @@ $films = FilmController::showMovies(10);
 // var_dump($films);
 $films = json_encode($films);
 $url = $routeController->getRoute("singleFilm");
-// $routeController->getRoute("index");
-
-
-// require_once("../inc/pdo.php");
-// require_once("../Controller/FilmController.php");
-
+$xhrUrl = $routeController->getRoute("addPref");
+require_once($routeController->getController("UserController"));
+// pour tester les vardump du pref
+UserController::prefListUser("juste pour voir",$_SESSION);
 // $film = (FilmController::getFilmById(4238,$instance));
-// var_dump($film)/*  $film->getTitle() */;
+// var_dump($film);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +36,8 @@ $url = $routeController->getRoute("singleFilm");
         const films = <?= $films ?>; /* console.dir(films); */
         const dCard = true;
         const url = "<?= $url ?>";
+        const xhrUrl = "<?= $xhrUrl ?>";
+        const session_id = <?= $_SESSION["user"]["id_user"] ?>;
     </script>
     <script src="<?= $routeController->getAssets(); ?>js/master.js" defer></script>
     <script src="<?= $routeController->getAssets(); ?>js/card.js" type="text/babel" defer></script>

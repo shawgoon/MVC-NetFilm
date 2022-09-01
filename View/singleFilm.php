@@ -8,6 +8,7 @@ if($_SERVER['PHP_SELF'] === '/NetFilm/index.php'){
 require_once($pref."Controller/RouteController.php");
 $routeController = new RouteController($_SERVER);
 require_once ($routeController->getController("FilmController"));
+
 if(isset($_GET["id_movie"]) && !empty($_GET["id_movie"])){
     $singleFilm = FilmController::getFilmByid(strip_tags($_GET["id_movie"]));
 } else {
@@ -16,6 +17,7 @@ if(isset($_GET["id_movie"]) && !empty($_GET["id_movie"])){
 }
 // var_dump($singleFilm);
 $url = $routeController->getRoute("singleFilm");
+$xhrUrl = $routeController->getRoute("addPref");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +33,7 @@ $url = $routeController->getRoute("singleFilm");
         const films = <?= $singleFilm ?>; /* console.dir(films); */
         const dCard = false;
         const url = "<?= $url ?>";
+        const xhrUrl = "<?= $xhrUrl ?>";
     </script>
     <script src="<?= $routeController->getAssets(); ?>js/card.js" type="text/babel" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
