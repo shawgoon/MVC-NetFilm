@@ -12,6 +12,10 @@ a{
     text-decoration: none;
     color: rgb(6, 22, 248);
 }
+button:hover{
+    cursor: pointer;
+    background-color: rgb(97, 150, 248);
+}
 
 /***** navigation *****/
 
@@ -66,27 +70,53 @@ a{
 .cardsFrame{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1em;
+    justify-content: space-around;
 }
 .title{
     font-size: 2em;
     color: rgb(6, 22, 248);
-    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 .cardImg img{
     width: 100%;
 }
 .cardImg{
-    margin: 0 auto;
+    width: 15em;
+    margin: 0.5em auto;
 }
 .card{
     width: 32%;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     border: solid 5px rgb(97, 107, 248);
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+.addList,
+.infoFilm{
+    width: 20em;
+    height: 2em;
+    margin: 1em;
+    background-color: rgb(204, 207, 247);
+    border: none;
+    color:rgb(6, 22, 248);
+    border-radius: 0.5em;
+}
+.infoFilm{
+    background-color: rgb(97, 107, 248);
+}
+.card p{
+    color: rgb(6, 22, 248);
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+.card li{
+    text-align: center;
+}
+
 
 /****** page category ******/
 

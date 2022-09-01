@@ -39,7 +39,7 @@ $genres = FilmController::menuGenre();
             <div class="search">
                 <div action="" id="formAuto">
                     <input class="" type="text" placeholder="search">
-                    <button id="searchBtn" data-xhrurl="<?= $routeController->getRoute("singleFilm") ?>"><i class="fa-solid fa-magnifying-glass"></i> search</button>
+                    <button id="searchBtn" data-xhrurl="<?= $routeController->getRoute("singleFilm") ?>"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <ul id="list" data-xhrurl="<?=$routeController->getInc("search")?>"></ul>
             </div>

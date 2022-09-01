@@ -17,7 +17,7 @@ class FilmRepository {
         $result = $query->fetchAll();
         return $result;           
     }
-    public function getFilmById($id){
+    public function selectFilmById($id){
         // var_dump($id);
         $instance = new ConnectBDD();
         $rq = "SELECT * FROM movies_full WHERE id_movie = :id";
@@ -27,18 +27,7 @@ class FilmRepository {
         $requete->execute();
         $result = $requete->fetch();
         // var_dump($result);
-        $film = new Film(
-            intval($result["id_movie"]),
-            $result["title"],
-            intval($result["year"]),
-            $result["genres"],
-            $result["plot"],
-            $result["directors"],
-            $result["cast"]
-        );
-        var_dump($result["title"]);
-        var_dump($film->getTitle());
-        return $film;
+        return $result;
     }
     public function selectGenres(){
         $instance = new ConnectBDD();

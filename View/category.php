@@ -29,6 +29,7 @@ if(isset($_GET['currentPage']) && !empty($_GET['currentPage'])){
 
 $genreFilms = FilmController::showGenre($_GET['genre'],$currentPage);
 $genreFilms = json_encode($genreFilms);
+$url = $routeController->getRoute("singleFilm");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,10 +41,15 @@ $genreFilms = json_encode($genreFilms);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.18.13/babel.min.js" integrity="sha512-PRl9KbPVEMeO1HV3BU5hcxpipzo2EVLe+tvWfLJf0A7PnKCfShArjZ2iXVAVo8ffpBSfRO0K58TYuquQvVSeVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script>const films = <?= $genreFilms ?>; /* console.dir(films); */</script>
+    <script>
+        const films = <?= $genreFilms ?>; /* console.dir(films); */
+        const dCard = true;
+        const url = "<?= $url ?>";
+    </script>
     <script src="<?= $routeController->getAssets(); ?>js/card.js" type="text/babel" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= $routeController->getAssets(); ?>css/style.css">
+    <link rel="stylesheet" href="<?= $routeController->getAssets(); ?>css/search.css">
 </head>
 <body>
     <header>

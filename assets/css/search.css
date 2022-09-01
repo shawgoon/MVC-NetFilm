@@ -10,10 +10,14 @@
 .search input,
 .search button{
     height: 2em;
-    background-color: rgb(154, 160, 247);
-    border-color: rgb(6, 22, 248);
+    padding: 0.5em;
+    background-color: rgb(204, 207, 247);
+    border: none;
     color:rgb(6, 22, 248);
     border-radius: 0.5em;
+}
+.search button{
+    width: 2em;
 }
 #list li:hover{
     cursor: pointer;

@@ -1,0 +1,10 @@
+.cardsFrame{
+    display: flex;
+    justify-content: center;
+}
+.cardImg{
+    width: 20em;
+}
+.card{
+    width: 50%;
+}
